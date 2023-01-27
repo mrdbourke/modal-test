@@ -27,7 +27,7 @@ class FoodNotFood:
         from transformers import pipeline
 
         self.classifier_pipeline = pipeline("zero-shot-classification",
-                                            model="zero-shot-classification")
+                                            model="facebook/bart-large-mnli")
 
     @stub.function(cpu=8, retries=3)
     def predict(self, sample: dict, labels=["food", "not_food"]):
